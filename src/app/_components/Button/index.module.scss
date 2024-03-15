@@ -1,5 +1,6 @@
 @import '../../_css/type.scss';
 
+
 .button {
   border: none;
   cursor: pointer;
@@ -8,12 +9,16 @@
   background-color: transparent;
   text-decoration: none;
   display: inline-flex;
-  padding: 12px 24px;
+  padding: 10px 24px;
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
+  border-radius: 10px;
 }
-
+.button:hover {
+  background-color: tomato;
+  color: white;
+}
 .content {
   display: flex;
   align-items: center;
@@ -34,8 +39,10 @@
 }
 
 .appearance--primary {
-  background-color: var(--theme-elevation-1000);
+  background-color: #9253ea;
   color: var(--theme-elevation-0);
+
+
 }
 
 .appearance--secondary {

@@ -1,0 +1,22 @@
+.logo {
+  border-radius: 100%;
+  margin-top: 1rem;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header {
+  padding:0;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: calc(var(--base) / 2 ) var(--base);
+}
+.hide {
+  display: none;
+}
