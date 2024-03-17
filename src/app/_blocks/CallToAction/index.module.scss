@@ -35,7 +35,7 @@ $spacer-h: calc(var(--block-padding) / 2);
   align-items: center;
 
   @include mid-break {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 }

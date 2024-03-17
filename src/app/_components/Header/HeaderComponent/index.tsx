@@ -21,7 +21,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
     >
       <Gutter className={classes.container}>
         <Link href={'/'}>
-          <Image src="/logo.jpg" alt="logo" width={70} height={70} className={classes.logo} />
+          <Image src="/logo.jpg" alt="logo" width={30} height={30} className={classes.logo} />
         </Link>
         <HeaderNav header={header} />
       </Gutter>

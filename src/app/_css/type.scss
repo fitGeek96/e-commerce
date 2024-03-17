@@ -22,11 +22,11 @@
 }
 
 %h2 {
-  font-size: 48px;
+  font-size: 2rem;
   line-height: 54px;
   font-weight: bold;
-  text-align: center;
-  color: #9253ea;
+  text-align: left;
+  color: #0c001d;
 
   @include mid-break {
     font-size: 32px;
