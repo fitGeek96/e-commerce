@@ -1,11 +1,12 @@
+/* eslint-disable no-alert */
 /** @type {import('next').NextConfig} */
 const ContentSecurityPolicy = require('./csp')
 const redirects = require('./redirects')
 
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true
-  },
+
+    ignoreBuildErrors: true,
+
   reactStrictMode: true,
   swcMinify: true,
   images: {
