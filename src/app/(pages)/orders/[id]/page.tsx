@@ -66,7 +66,7 @@ export default async function Order({ params: { id } }) {
       <HR />
       <div className={classes.order}>
         <h4 className={classes.orderItems}>Items</h4>
-        {order.items?.map((item, index) => {
+        {order?.items?.map((item, index) => {
           if (typeof item.product === 'object') {
             const {
               quantity,

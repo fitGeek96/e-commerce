@@ -62,7 +62,7 @@ export default async function Order({ params: { id } }) {
       </div>
 
       <div className={classes.order}>
-        {order.items?.map((item, index) => {
+        {order?.items?.map((item, index) => {
           if (typeof item.product === 'object') {
             const {
               quantity,
