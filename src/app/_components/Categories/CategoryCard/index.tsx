@@ -1,11 +1,12 @@
 'use client'
 
 import React from 'react'
-import { Category, Media } from '../../../../payload/payload-types'
 import Link from 'next/link'
 
-import classes from './index.module.scss'
+import { Category, Media } from '../../../../payload/payload-types'
 import { useFilter } from '../../../_providers/Filter'
+
+import classes from './index.module.scss'
 
 const CategoryCard = ({ category }: { category: Category }) => {
   const media = category.media as Media
