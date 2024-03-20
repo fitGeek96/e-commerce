@@ -19,7 +19,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
       <Gutter>
         <ul className={classes.inclusions}>
-          {inclusions.map(inclusion => (
+          {inclusions?.map(inclusion => (
             <li key={inclusion.title}>
               <Image
                 src={inclusion.icon}
@@ -41,7 +41,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             <Link href={'/'}>
               <Image src={'/logo.jpg'} width={50} height={50} alt="logo" />
             </Link>
-            <p>{footer.copyright}</p>
+            <p>{footer?.copyright}</p>
             <div className={classes.socialLinks}>
               {navItems.map(item => {
                 const icon = item?.link?.icon as Media
