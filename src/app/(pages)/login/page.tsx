@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
-import { RenderParams } from '../../_components/RenderParams'
+// import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import LoginForm from './LoginForm'
