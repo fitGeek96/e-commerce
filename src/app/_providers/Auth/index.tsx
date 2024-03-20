@@ -4,8 +4,6 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 
 import { User } from '../../../payload/payload-types'
 
-import fetch from 'node-fetch'
-
 // eslint-disable-next-line no-unused-vars
 type ResetPassword = (args: {
   password: string
@@ -33,22 +31,6 @@ type AuthContext = {
 }
 
 const Context = createContext({} as AuthContext)
-
-export default async function handler(req, res) {
-  try {
-    const token = process.env.GITHUB_TOKEN
-    const response = await fetch('https://api.github.com/users', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    const data = await response.json()
-    res.status(200).json(data)
-  } catch (error) {
-    console.error('Error fetching data from GitHub:', error)
-    res.status(500).json({ error: 'Error fetching data from GitHub' })
-  }
-}
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>()
@@ -86,7 +68,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = useCallback<Login>(async args => {
     try {
-      const res = await fetch(`/api/login`, {
+      const res = await fetch(`https://boutique-rho.vercel.app/api/users/login`, {
         method: 'POST',
         credentials: 'include',
         headers: {
