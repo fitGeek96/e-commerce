@@ -32,6 +32,8 @@ type AuthContext = {
 
 const Context = createContext({} as AuthContext)
 
+const querystring = require('querystring')
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>()
 
@@ -46,7 +48,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         headers: {
           'Content-Type': 'text/html',
         },
-        body: JSON.stringify({
+        body: querystring.stringify({
           email: args.email,
           password: args.password,
           passwordConfirm: args.passwordConfirm,
@@ -74,7 +76,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         headers: {
           'Content-Type': 'text/html',
         },
-        body: JSON.stringify({
+        body: querystring.stringify({
           email: args.email,
           password: args.password,
         }),
@@ -150,7 +152,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         headers: {
           'Content-Type': 'text/html',
         },
-        body: JSON.stringify({
+        body: querystring.stringify({
           email: args.email,
         }),
       })
@@ -175,7 +177,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         headers: {
           'Content-Type': 'text/html',
         },
-        body: JSON.stringify({
+        body: querystring.stringify({
           password: args.password,
           passwordConfirm: args.passwordConfirm,
           token: args.token,
