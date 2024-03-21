@@ -67,32 +67,36 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [])
 
   const login = useCallback<Login>(async args => {
-    try {
-      const res = await fetch(`https://e-commerce-theta-sepia.vercel.app/api/users/login`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'text/html',
-        },
-        body: JSON.stringify({
-          email: args.email,
-          password: args.password,
-        }),
-      })
 
-      if (res.ok) {
-        const { user, errors } = await res.json()
-        if (errors) throw new Error(errors[0].message)
-        setUser(user)
-        setStatus('loggedIn')
-        return user
-      }
+    return (
+      <h1>Saha Ramdankoum....</h1>
+    )
+  //   try {
+  //     const res = await fetch(`https://e-commerce-theta-sepia.vercel.app/api/users/login`, {
+  //       method: 'POST',
+  //       credentials: 'include',
+  //       headers: {
+  //         'Content-Type': 'text/html',
+  //       },
+  //       body: JSON.stringify({
+  //         email: args.email,
+  //         password: args.password,
+  //       }),
+  //     })
 
-      throw new Error('Invalid login')
-    } catch (e) {
-      throw new Error('An error occurred while attempting to login.')
-    }
-  }, [])
+  //     if (res.ok) {
+  //       const { user, errors } = await res.json()
+  //       if (errors) throw new Error(errors[0].message)
+  //       setUser(user)
+  //       setStatus('loggedIn')
+  //       return user
+  //     }
+
+  //     throw new Error('Invalid login')
+  //   } catch (e) {
+  //     throw new Error('An error occurred while attempting to login.')
+  //   }
+  // }, [])
 
   const logout = useCallback<Logout>(async () => {
     try {
