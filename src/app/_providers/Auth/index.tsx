@@ -40,7 +40,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [status, setStatus] = useState<undefined | 'loggedOut' | 'loggedIn'>()
   const create = useCallback<Create>(async args => {
     try {
-      const res = await fetch(`https://e-commerce-theta-sepia.vercel.app/api/users/create`, {
+      const res = await fetch(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/users/create`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -172,21 +172,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const resetPassword = useCallback<ResetPassword>(async args => {
     try {
-      const res = await fetch(
-        `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/users/reset-password`,
-        {
-          method: 'POST',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'text/html',
-          },
-          body: JSON.stringify({
-            password: args.password,
-            passwordConfirm: args.passwordConfirm,
-            token: args.token,
-          }),
+      const res = await fetch(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/users/reset-password`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'text/html',
         },
-      )
+        body: JSON.stringify({
+          password: args.password,
+          passwordConfirm: args.passwordConfirm,
+          token: args.token,
+        }),
+      })
 
       if (res.ok) {
         const { data, errors } = await res.json()
