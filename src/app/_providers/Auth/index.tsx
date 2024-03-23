@@ -44,7 +44,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         method: 'POST',
         credentials: 'include',
         headers: {
-          'Content-Type': 'text/html',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email: args.email,
@@ -72,7 +72,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         method: 'POST',
         credentials: 'include',
         headers: {
-          'Content-Type': 'text/html',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email: args.email,
@@ -100,7 +100,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         method: 'POST',
         credentials: 'include',
         headers: {
-          'Content-Type': 'text/html',
+          'Content-Type': 'application/json',
         },
       })
 
@@ -122,7 +122,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           method: 'GET',
           credentials: 'include',
           headers: {
-            'Content-Type': 'text/html',
+            'Content-Type': 'application/json',
           },
         })
 
@@ -150,7 +150,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           method: 'POST',
           credentials: 'include',
           headers: {
-            'Content-Type': 'text/html',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             email: args.email,
@@ -176,7 +176,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         method: 'POST',
         credentials: 'include',
         headers: {
-          'Content-Type': 'text/html',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           password: args.password,
